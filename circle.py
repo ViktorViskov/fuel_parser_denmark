@@ -27,12 +27,18 @@ class CIRCLE_STATION:
 
   # method for get prices
   def get_prices(self):
-    # make request
-    self.load()
+    try:
+      # make request
+      self.load()
 
-    # parse
-    self.parse()
+      # parse
+      self.parse()
 
-    # result
-    return {"95":self.b_95, "100":self.b_100, "d":self.d, "d+":self.dp}
+      # result
+      return {"95":self.b_95, "100":self.b_100, "d":self.d, "d+":self.dp}
+    
+    # catch errors
+    except:
+      return {"95":"Err", "100":"Err", "d":"Err", "d+":"Err"}
+
   

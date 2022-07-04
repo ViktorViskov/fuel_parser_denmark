@@ -21,12 +21,17 @@ class OK_STATION:
 
   # method for get prices
   def get_prices(self):
-    # make request
-    self.load()
+    try:
+      # make request
+      self.load()
 
-    # parse
-    self.parse()
+      # parse
+      self.parse()
 
-    # result
-    return {"95":self.ok_b95, "100":self.ok_b100, "d":self.ok_d}
+      # result
+      return {"95":self.ok_b95, "100":self.ok_b100, "d":self.ok_d}
+    
+    # catch errors
+    except:
+      return {"95":"Err","100":"Err", "d":"Err"}
   

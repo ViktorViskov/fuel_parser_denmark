@@ -28,12 +28,17 @@ class INGO_STATION:
 
   # method for get prices
   def get_prices(self):
-    # make request
-    self.load()
+    try:
+      # make request
+      self.load()
 
-    # parse
-    self.parse()
+      # parse
+      self.parse()
 
-    # result
-    return {"92": self.b_92,"95":self.b_95, "95+":self.b_95p, "100":self.b_100, "d":self.d}
+      # result
+      return {"92": self.b_92,"95":self.b_95, "95+":self.b_95p, "100":self.b_100, "d":self.d}
+    
+    # catch errors
+    except:
+      return {"92":"Err","95":"Err", "95+":"Err", "d":"Err"}
   

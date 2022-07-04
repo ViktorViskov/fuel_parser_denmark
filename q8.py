@@ -35,12 +35,17 @@ class Q8_STATION:
 
   # method for get prices
   def get_prices(self):
-    # make request
-    self.load()
+    try:
+      # make request
+      self.load()
 
-    # parse
-    self.parse()
+      # parse
+      self.parse()
 
-    # result
-    return {"95":self.q8_raw[0], "100":self.q8_raw[1], "d":self.q8_raw[2], "d+":self.q8_raw[3]}
+      # result
+      return {"95":self.q8_raw[0], "100":self.q8_raw[1], "d":self.q8_raw[2], "d+":self.q8_raw[3]}
+    
+    # catch errors
+    except:
+      return {"95":"Err","100":"Err", "d":"Err", "d+":"Err"}
   

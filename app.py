@@ -8,9 +8,9 @@ from ingo import INGO_STATION
 from goon import GOON_STATION
 
 # load prices
-# print(OK_STATION().get_prices())
-# print(Q8_STATION().get_prices())
-# print(F24_STATION().get_prices())
-# print(CIRCLE_STATION().get_prices())
-# print(INGO_STATION().get_prices())
-# print(GOON_STATION().get_prices())
+print(OK_STATION().get_prices())
+print(Q8_STATION().get_prices())
+print(F24_STATION().get_prices())
+print(CIRCLE_STATION().get_prices())
+print(INGO_STATION().get_prices())
+print(GOON_STATION().get_prices())

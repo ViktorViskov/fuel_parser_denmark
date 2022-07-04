@@ -51,15 +51,20 @@ class GOON_STATION:
 
   # method for get prices
   def get_prices(self):
-    # make request
-    self.get_link()
+    try:
+      # make request
+      self.get_link()
 
-    # load image and process
-    self.load()
-    self.preprocess_images()
+      # load image and process
+      self.load()
+      self.preprocess_images()
 
-    # parse
-    self.parse()
+      # parse
+      self.parse()
 
-    # result
-    return {"92":self.b_92, "95":self.b_95, "d":self.d}
+      # result
+      return {"92":self.b_92, "95":self.b_95, "d":self.d}
+    
+    # catch errors
+    except:
+      return {"92":"Err", "95":"Err", "d":"Err"}
